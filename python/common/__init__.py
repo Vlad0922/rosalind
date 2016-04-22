@@ -2,3 +2,4 @@
 
 from FASTA import readFASTA
 from DNA_RNA import DNA_to_RNA, RNA_to_DNA, comp_DNA, revcomp_DNA
+from proteins import DNA_to_PROT

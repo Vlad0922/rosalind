@@ -43,13 +43,13 @@ def generateTable():
 
 def main():
 	with open(sys.argv[1], 'r') as data:
-		dna = data.readline()
+		rna = data.readline()
 
 	t = generateTable()
 	protein = str()
 
-	for i in range (0, len(dna) - 3, 3):
-		c = t[dna[i:i+3]]
+	for i in range (0, len(rna) - 3, 3):
+		c = t[rna[i:i+3]]
 		if(c == 'Stop'):
 			break
 

@@ -10,12 +10,18 @@ A protein string resulting from transcribing and translating the exons of s. (No
 
 import sys
 
-from common import readFASTA, revcomp_DNA
+from common import readFASTA, revcomp_DNA, DNA_to_PROT
 
 def main():
     data = readFASTA(sys.argv[1])
 
-    print data
+    dna = data[0].dna
+
+    for i in range(1, len(data)):
+        dna = dna.replace(data[i].dna, '')
+
+    prot = DNA_to_PROT(dna)
+    print prot
 
 if __name__ == '__main__':
     main()

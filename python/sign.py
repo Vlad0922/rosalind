@@ -16,6 +16,18 @@ import itertools
 def elem_multiply(x, y):
     return [a*b for a, b in zip(x, y)]
 
+'''
+Main idea is:
+1) Generate all permutation length n, we have n! permutations
+2) Generate all masks length n, where every element in mask can be -1 or 1 (signed mask) and we have 2^n maskes
+3) Multiply every permutation with every mask
+
+Pros:
+work fast
+Cons:
+fail when n >= 12
+'''
+
 def main():
     with open(sys.argv[1]) as input:
         n = int(input.readline())
